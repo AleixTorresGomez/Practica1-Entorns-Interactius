@@ -62,6 +62,16 @@ function mousePressed() {
   col = color(random(255), random(255), random(255), random(100));
 }
 
+function touchStarted() {
+  next = 0;
+  painting = true;
+  previous.x = mouseX;
+  previous.y = mouseY;
+  paths.push(new Path());
+  col = color(random(255), random(255), random(255), random(100));
+}
+
+
 function deviceShaken(){
   
   background(255);
