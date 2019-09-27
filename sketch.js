@@ -74,7 +74,7 @@ function touchStarted() {
 
 function deviceShaken(){
   
-  background(255);
+  background(0);
 }
 // parar
 function mouseReleased() {
