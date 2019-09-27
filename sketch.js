@@ -15,13 +15,13 @@ var col;
 
 function setup() {
   // preparem el canvas
-  createCanvas(720, 400);
+  createCanvas(displayWidth, displayHeight);
   current = createVector(0,0);
   previous = createVector(0,0);
 };
 
 function draw() {
-  background(200);
+  background(255);
 
   // si es tiemps de fer un nou punt
   if (millis() > next && painting) {
@@ -62,6 +62,10 @@ function mousePressed() {
   col = color(random(255), random(255), random(255), random(100));
 }
 
+function deviceShaken(){
+  
+  background(255);
+}
 // parar
 function mouseReleased() {
   painting = false;
@@ -128,9 +132,11 @@ class Particle {
   // dibuixar una particula i unir-la a una linia
   // dibuixar una linia a l'altre
   display(other) {
+    
     stroke(0, this.lifespan);
     fill(col, this.lifespan/2);
-    ellipse(this.position.x,this.position.y, 8, 8);
+    
+    ellipse(this.position.x,this.position.y, 15, 15);
     // utilitzem un "if" per si volem dibuixar més linies
     if (other) {
       line(this.position.x, this.position.y, other.position.x, other.position.y);
